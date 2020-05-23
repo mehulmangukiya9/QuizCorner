@@ -8,7 +8,7 @@ For the legacy Bootstrap 3 version of this theme, you can view the [last stable 
 
 [![SB Admin 2 Preview](https://startbootstrap.com/assets/img/screenshots/themes/sb-admin-2.png)](https://blackrockdigital.github.io/startbootstrap-sb-admin-2/)
 
-**[Launch Live Preview](https://blackrockdigital.github.io/startbootstrap-sb-admin-2/)**
+**[Launch Live Preview](https://github.com/mehulmangukiya9/QuizCorner/blob/master/src/main/webapp/dashboard/index.html)**
 
 ## Status
 
