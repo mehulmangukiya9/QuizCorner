@@ -10,6 +10,11 @@
   <meta name="author" content="">
 
   <title>Student - Dashboard</title>
+  
+  <!------ Custom files for the Quiz Module 
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>---------->
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -17,6 +22,9 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- Custom styles for Quiz Module-->
+  <link href="css/quiz-module-custom-css.css" rel="stylesheet">
+  
 
 </head>
 
@@ -145,6 +153,70 @@
             <a href="#" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm"><i class="far fa-play-circle  text-white-50"></i> Start Quiz</a>
           </div>
 
+
+
+<div class="container">
+        <div class="row"><br><br>
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="loader">
+
+                    <div id="quiz">
+                  
+                        <div class="question"> <!--h3 mb-0 text-gray-800-->
+                            <h3><span class="label label-warning" id="qid">1</span>
+                            <span id="question"> How can you add a single line comment in a JavaScript?</span>
+                            </h3>
+                        </div>
+                        <ul>
+                          <li>
+                            <input type="radio" id="f-option" name="selector" value="1">
+                            <label for="f-option" class="element-animation">/*-- comment --*/</label>
+                            <div class="check"></div>
+                          </li>
+                          
+                          <li>
+                            <input type="radio" id="s-option" name="selector" value="2">
+                            <label for="s-option" class="element-animation">comment //</label>
+                            <div class="check"><div class="inside"></div></div>
+                          </li>
+                          
+                          <li>
+                            <input type="radio" id="t-option" name="selector" value="3">
+                            <label for="t-option" class="element-animation">comment [ ]</label>
+                            <div class="check"><div class="inside"></div></div>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-muted">
+                    <span id="answer"></span>
+                </div>
+                
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div id="result-of-question" class="pulse animated" style="display: none;">
+                    <span id="totalCorrect" class="pull-right"></span>
+                    <table class="table table-hover table-responsive" >
+                        <thead>
+                            <tr>
+                                <th>Question No.</th>
+                                <th>Our answer</th>
+                                <th>Your answer</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody id="quizResult"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+
+		  
+<!--
           <Content Row>
           <div class="row">
             
@@ -174,7 +246,7 @@
               </div>
             </div>
         </div>
-		</Content>
+		</Content>-->
 		
 		
 		
@@ -283,6 +355,9 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+  
+  <!-- Custom scripts for Quiz module-->
+  <script src="js/quiz_custom_js.js"></script>
 
 
 </body>
