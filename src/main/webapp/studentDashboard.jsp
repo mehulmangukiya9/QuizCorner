@@ -1,6 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 
   <meta charset="utf-8">
@@ -149,7 +150,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h2 class="h3 mb-0 text-gray-800">Welcome _Username_</h2>
+            <h2 class="h3 mb-0 text-gray-800">Welcome ${username}</h2>
             <a href="#" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm"><i class="far fa-play-circle  text-white-50"></i> Start Quiz</a>
           </div>
 
@@ -275,7 +276,7 @@
         <div class="modal-body">Mehul, you can execute your logout code here</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="index.html">Logout</a>
+          <a class="btn btn-primary" href="home.jsp">Logout</a>
         </div>
       </div>
     </div>
