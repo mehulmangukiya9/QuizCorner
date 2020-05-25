@@ -3,14 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-  <meta charset="ISO-8859-1">
+<meta charset="ISO-8859-1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Student - Dashboard</title>
+  <title>Student Dashboard</title>
   
   <!------ Custom files for the Quiz Module 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -25,21 +24,21 @@
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <!-- Custom styles for Quiz Module-->
   <link href="css/quiz-module-custom-css.css" rel="stylesheet">
-  
 
 </head>
-
 <body id="page-top">
 
-<% 
-	response.setHeader("cache-Control","no-cache,no-store,must-revalidate");
-	if(session.getAttribute("user") == null)
-	{
-		response.sendRedirect("home.jsp");
-	}
+<%
+	response.setHeader("cache-Control", "no-cache,no-store,must-revalidate");
+		  
+		  response.setHeader("pragma", "no-cache");
+		  if(session.getAttribute("user") == null)
+		  {
+			  response.sendRedirect("home.jsp");
+		  }
 %>
 
-  <!-- Page Wrapper -->
+ <!-- Page Wrapper -->
   <div id="wrapper">
 
     <!-- Sidebar -->
@@ -367,7 +366,6 @@
   
   <!-- Custom scripts for Quiz module-->
   <script src="js/quiz_custom_js.js"></script>
-
 
 </body>
 

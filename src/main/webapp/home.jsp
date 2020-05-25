@@ -11,6 +11,11 @@
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+<% 
+	response.setHeader("cache-Control","no-cache,no-store,must-revalidate");
+%>
+
 <div class="container">
   <h2>Student login form</h2>
   <form action="/login">
