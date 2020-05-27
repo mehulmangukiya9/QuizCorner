@@ -1,15 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
-  <meta charset="utf-8">
+<meta charset="ISO-8859-1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Student - Dashboard</title>
+  <title>Student Dashboard</title>
   
   <!------ Custom files for the Quiz Module 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -24,13 +24,21 @@
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <!-- Custom styles for Quiz Module-->
   <link href="css/quiz-module-custom-css.css" rel="stylesheet">
-  
 
 </head>
-
 <body id="page-top">
 
-  <!-- Page Wrapper -->
+<%
+	response.setHeader("cache-Control", "no-cache,no-store,must-revalidate");
+		  
+		  response.setHeader("pragma", "no-cache");
+		  if(session.getAttribute("user") == null)
+		  {
+			  response.sendRedirect("home.jsp");
+		  }
+%>
+
+ <!-- Page Wrapper -->
   <div id="wrapper">
 
     <!-- Sidebar -->
@@ -79,7 +87,7 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#" data-toggle="modal" data-target="#modalMyProfile">Update Profile</a>
+            <a class="collapse-item" href="#" data-toggle="modal" data-target="#modalMyProfile">My Profile</a>
             <a class="collapse-item" href="#">About Us</a>
           </div>
         </div>
@@ -149,7 +157,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h2 class="h3 mb-0 text-gray-800">Welcome _Username_</h2>
+            <h2 class="h3 mb-0 text-gray-800">Welcome ${username}</h2>
             <a href="#" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm"><i class="far fa-play-circle  text-white-50"></i> Start Quiz</a>
           </div>
 
@@ -202,7 +210,7 @@
                         <thead>
                             <tr>
                                 <th>Question No.</th>
-                                <th>Correct answer</th>
+                                <th>Our answer</th>
                                 <th>Your answer</th>
                                 <th>Result</th>
                             </tr>
@@ -211,7 +219,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
 
 
@@ -249,6 +257,8 @@
 		</Content>-->
 		
 		
+		
+		
       </div>
     </div>
 
@@ -273,7 +283,7 @@
         <div class="modal-body">Mehul, you can execute your logout code here</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="index.html">Logout</a>
+          <a class="btn btn-primary" href="logout">Logout</a>
         </div>
       </div>
     </div>
@@ -337,7 +347,7 @@
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-unique btn-primary btn-lg">Update <i class="fas fa-paper-plane-o ml-1"></i></button>
+        <button class="btn btn-unique btn-primary btn-lg">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
       </div>
     </div>
   </div>
@@ -356,7 +366,6 @@
   
   <!-- Custom scripts for Quiz module-->
   <script src="js/quiz_custom_js.js"></script>
-
 
 </body>
 
