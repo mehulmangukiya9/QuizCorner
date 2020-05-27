@@ -87,7 +87,7 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#" data-toggle="modal" data-target="#modalMyProfile">My Profile</a>
+            <a class="collapse-item" href="#" data-toggle="modal" data-target="#modalMyProfile">Update Profile</a>
             <a class="collapse-item" href="#">About Us</a>
           </div>
         </div>
@@ -336,18 +336,24 @@
         <div class="md-form mb-0">
           <i class="fas fa-tag prefix grey-text"></i>
           <input type="text" id="form32" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="form32">Subject</label>
+          <label data-error="wrong" data-success="right" for="form32">Username</label>
+        </div>
+		
+		<div class="md-form mb-0">
+          <i class="fas fa-tag prefix grey-text"></i>
+          <input type="text" id="form33" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form33">Password</label>
         </div>
 
         <div class="md-form">
           <i class="fas fa-pencil prefix grey-text"></i>
           <textarea type="text" id="form8" class="md-textarea form-control" rows="3"></textarea>
-          <label data-error="wrong" data-success="right" for="form8">Your message</label>
+          <label data-error="wrong" data-success="right" for="form8">Address</label>
         </div>
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-unique btn-primary btn-lg">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+        <button class="btn btn-unique btn-primary btn-lg">Update <i class="fas fa-paper-plane-o ml-1"></i></button>
       </div>
     </div>
   </div>
