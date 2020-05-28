@@ -8,11 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import com.mehul.quizcorner.model.Student;
 import com.mehul.quizcorner.repo.StudentRepository;
 
 @Controller
+@SessionAttributes({"user"})
 public class UserController 
 {
 	@Autowired
@@ -25,14 +28,14 @@ public class UserController
 	}
 	
 	@RequestMapping("/login")
-	public String login(@RequestParam String username, @RequestParam String pswd, Model model, HttpSession session)
+	public String login(@RequestParam String username, @RequestParam String pswd, Model model)
 	{
 		Student student = srepo.findStudentByUsernameAndPassword(username, pswd);
 		if(student != null)
 		{
-			String msg = "login accessed";
-			session.setAttribute("user", msg);
-			model.addAttribute("username", student.getName());
+//			String msg = "login accessed";
+//			model.addAttribute("user", msg);
+			model.addAttribute("user", student);
 			return "student_dashboard.jsp";
 		}
 		else
@@ -42,25 +45,17 @@ public class UserController
 	}
 	
 	@RequestMapping("/logout")
-	public String logout(HttpSession session)
+	public String logout(SessionStatus status)
 	{
-		session.invalidate();
+		status.setComplete();
 		return "home.jsp";
 	}
 	
 	@RequestMapping("/updateStudent")
-	public String updateStudent(@RequestParam String name, @RequestParam String email, @RequestParam String username, @RequestParam String password, @RequestParam String address)
+	public String updateStudent(@RequestParam int student_id, @RequestParam String name, @RequestParam String email, @RequestParam String username, @RequestParam String password, @RequestParam String address)
 	{
-		Student student = new Student(name, email, username, password, address);
+		Student student = new Student(student_id, name, email, username, password, address);
 		srepo.save(student);
 		return "student_dashboard.jsp";
-	}
-	
-	@RequestMapping("/viewProfile")
-	public String viewStudent(@RequestParam String user_value)
-	{
-		Student student = srepo.findByUsername(user_value);
-		System.out.println(student);
-		return "view_profile.jsp";
 	}
 }

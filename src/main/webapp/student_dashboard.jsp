@@ -1,3 +1,4 @@
+<%@page import="com.mehul.quizcorner.model.Student"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
@@ -33,6 +34,7 @@
 	response.setHeader("cache-Control", "no-cache,no-store,must-revalidate");
 		  
 		  response.setHeader("pragma", "no-cache");
+		  
 		  if(session.getAttribute("user") == null)
 		  {
 			  response.sendRedirect("home.jsp");
@@ -135,8 +137,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-				<input type="hidden" value="${username}" name="user_value">
-                <a class="dropdown-item" href="/viewProfile">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalMyUserProfile">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   My Profile
                 </a>
@@ -159,7 +160,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h2 class="h3 mb-0 text-gray-800">Welcome ${username}</h2>
+            <h2 class="h3 mb-0 text-gray-800">Welcome ${user.name}</h2>
             <a href="#" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm"><i class="far fa-play-circle  text-white-50"></i> Start Quiz</a>
           </div>
 
@@ -324,28 +325,30 @@
 	        </button>
 	      </div>
 	      <div class="modal-body mx-3">
+	      
+	      <input type="hidden" value="${user.student_id}" name="student_id">
 	        
 	        <div class="md-form mb-0">
 	          <i class="fas fa-user prefix grey-text"></i>
-	          <input type="text" id="form34" class="form-control validate" name="name">
+	          <input type="text" id="form34" class="form-control validate" name="name" value="${user.name}">
 	          <label data-error="wrong" data-success="right" for="form34">Your name</label>
 	        </div>
 	
 	        <div class="md-form mb-0">
 	          <i class="fas fa-envelope prefix grey-text"></i>
-	          <input type="email" id="form29" class="form-control validate" name="email">
+	          <input type="email" id="form29" class="form-control validate" name="email" value="${user.email}">
 	          <label data-error="wrong" data-success="right" for="form29">Your email</label>
 	        </div>
 	
 	        <div class="md-form mb-0">
 	          <i class="fas fa-tag prefix grey-text"></i>
-	          <input type="text" id="form32" class="form-control validate" name="username">
+	          <input type="text" id="form32" class="form-control validate" name="username" value="${user.username}">
 	          <label data-error="wrong" data-success="right" for="form32">Username</label>
 	        </div>
 			
 			<div class="md-form mb-0">
 	          <i class="fas fa-tag prefix grey-text"></i>
-	          <input type="text" id="form33" class="form-control validate" name="password">
+	          <input type="text" id="form33" class="form-control validate" name="password" value="${user.password}">
 	          <label data-error="wrong" data-success="right" for="form33">Password</label>
 	        </div>
 	
@@ -363,7 +366,56 @@
 	  </div>
 	</div>
 </form>
-  
+
+<!-- User Profile -->
+
+	  <div class="modal fade" id="modalMyUserProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+	  aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header text-center">
+	        <h4 class="modal-title w-100 font-weight-bold">Profile</h4>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body mx-3">
+	      
+	      	<div class="md-form mb-0">
+	          <i class="fas fa-id-badge"></i>
+	          <label data-error="wrong" data-success="right" for="form34">Your Student-Id: <strong>${user.student_id}</strong></label>
+	        </div>
+	        
+	        <div class="md-form mb-0">
+	          <i class="fas fa-user prefix grey-text"></i>
+	          <label data-error="wrong" data-success="right" for="form34">Your name: <strong>${user.name}</strong></label>
+	        </div>
+	
+	        <div class="md-form mb-0">
+	          <i class="fas fa-envelope prefix grey-text"></i>
+	          <label data-error="wrong" data-success="right" for="form29">Your email: <strong>${user.email}</strong></label>
+	        </div>
+	
+	        <div class="md-form mb-0">
+	          <i class="fas fa-tag prefix grey-text"></i>
+	          <label data-error="wrong" data-success="right" for="form32">Username: <strong>${user.username}</strong></label>
+	        </div>
+			
+			<div class="md-form mb-0">
+	          <i class="fas fa-key"></i>
+	          <label data-error="wrong" data-success="right" for="form33">Password: <strong>${user.password}</strong></label>
+	        </div>
+	
+	        <div class="md-form">
+	          <i class="fas fa-atlas"></i>
+	          <label data-error="wrong" data-success="right" for="form8">Address: <strong>${user.address}</strong></label>
+	        </div>
+	
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
