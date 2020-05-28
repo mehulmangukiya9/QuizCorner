@@ -29,6 +29,16 @@ public class Student
 		this.password = password;
 		this.address = address;
 	}
+	
+	public Student(String name, String email, String username, String password, String address) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.username = username;
+		this.password = password;
+		this.address = address;
+	}
+	
 	public int getStudent_id() {
 		return student_id;
 	}

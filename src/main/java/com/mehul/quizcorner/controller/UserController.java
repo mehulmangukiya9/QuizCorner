@@ -40,10 +40,27 @@ public class UserController
 			return "home.jsp";
 		}
 	}
+	
 	@RequestMapping("/logout")
 	public String logout(HttpSession session)
 	{
 		session.invalidate();
 		return "home.jsp";
+	}
+	
+	@RequestMapping("/updateStudent")
+	public String updateStudent(@RequestParam String name, @RequestParam String email, @RequestParam String username, @RequestParam String password, @RequestParam String address)
+	{
+		Student student = new Student(name, email, username, password, address);
+		srepo.save(student);
+		return "student_dashboard.jsp";
+	}
+	
+	@RequestMapping("/viewProfile")
+	public String viewStudent(@RequestParam String user_value)
+	{
+		Student student = srepo.findByUsername(user_value);
+		System.out.println(student);
+		return "view_profile.jsp";
 	}
 }

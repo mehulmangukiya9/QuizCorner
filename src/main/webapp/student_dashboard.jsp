@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -134,7 +135,8 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalMyProfile">
+				<input type="hidden" value="${username}" name="user_value">
+                <a class="dropdown-item" href="/viewProfile">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   My Profile
                 </a>
@@ -310,54 +312,57 @@
   
   
    <!-- Profile Modal-->
-  <div class="modal fade" id="modalMyProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Profile</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-0">
-          <i class="fas fa-user prefix grey-text"></i>
-          <input type="text" id="form34" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="form34">Your name</label>
-        </div>
-
-        <div class="md-form mb-0">
-          <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="email" id="form29" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="form29">Your email</label>
-        </div>
-
-        <div class="md-form mb-0">
-          <i class="fas fa-tag prefix grey-text"></i>
-          <input type="text" id="form32" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="form32">Username</label>
-        </div>
-		
-		<div class="md-form mb-0">
-          <i class="fas fa-tag prefix grey-text"></i>
-          <input type="text" id="form33" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="form33">Password</label>
-        </div>
-
-        <div class="md-form">
-          <i class="fas fa-pencil prefix grey-text"></i>
-          <textarea type="text" id="form8" class="md-textarea form-control" rows="3"></textarea>
-          <label data-error="wrong" data-success="right" for="form8">Address</label>
-        </div>
-
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-unique btn-primary btn-lg">Update <i class="fas fa-paper-plane-o ml-1"></i></button>
-      </div>
-    </div>
-  </div>
-</div>
+   <form action="/updateStudent" method="get">
+	  <div class="modal fade" id="modalMyProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+	  aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header text-center">
+	        <h4 class="modal-title w-100 font-weight-bold">Profile</h4>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body mx-3">
+	        
+	        <div class="md-form mb-0">
+	          <i class="fas fa-user prefix grey-text"></i>
+	          <input type="text" id="form34" class="form-control validate" name="name">
+	          <label data-error="wrong" data-success="right" for="form34">Your name</label>
+	        </div>
+	
+	        <div class="md-form mb-0">
+	          <i class="fas fa-envelope prefix grey-text"></i>
+	          <input type="email" id="form29" class="form-control validate" name="email">
+	          <label data-error="wrong" data-success="right" for="form29">Your email</label>
+	        </div>
+	
+	        <div class="md-form mb-0">
+	          <i class="fas fa-tag prefix grey-text"></i>
+	          <input type="text" id="form32" class="form-control validate" name="username">
+	          <label data-error="wrong" data-success="right" for="form32">Username</label>
+	        </div>
+			
+			<div class="md-form mb-0">
+	          <i class="fas fa-tag prefix grey-text"></i>
+	          <input type="text" id="form33" class="form-control validate" name="password">
+	          <label data-error="wrong" data-success="right" for="form33">Password</label>
+	        </div>
+	
+	        <div class="md-form">
+	          <i class="fas fa-pencil prefix grey-text"></i>
+	          <textarea type="text" id="form8" class="md-textarea form-control" rows="3" name="address"></textarea>
+	          <label data-error="wrong" data-success="right" for="form8">Address</label>
+	        </div>
+	
+	      </div>
+	      <div class="modal-footer d-flex justify-content-center">
+	        <button class="btn btn-unique btn-primary btn-lg" type="submit">Update <i class="fas fa-paper-plane-o ml-1"></i></button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</form>
   
 
   <!-- Bootstrap core JavaScript-->
