@@ -58,4 +58,12 @@ public class UserController
 		srepo.save(student);
 		return "student_dashboard.jsp";
 	}
+	
+	@RequestMapping("/registerStudent")
+	public String registerStudent(@RequestParam String name, @RequestParam String email, @RequestParam String username, @RequestParam String password, @RequestParam String address)
+	{
+		Student student = new Student(name, email, username, password, address);
+		srepo.save(student);
+		return "home.jsp";
+	}
 }
