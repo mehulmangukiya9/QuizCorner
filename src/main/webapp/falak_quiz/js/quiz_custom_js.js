@@ -76,7 +76,7 @@
 	//showQuiz Function	
 	function showQuiz() {
 		var abc = document.getElementById("quizbody");
-		if (abc.style.display === "none") {
+		if (abc.style.display == "none") {
 			abc.style.display = "block";
 		} else {
 			abc.style.display = "none";
