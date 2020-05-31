@@ -115,23 +115,15 @@
                         	<h3 class="question">
                             	<span id="question"> ${question.content}</span>
                             </h3>
-                          <li>
-                            <input type="radio" id="f-option" name="selector" value="1">
-                            <label for="f-option" class="element-animation">/*-- comment --*/</label>
-                            <div class="check"></div>
-                          </li>
-                          
-                          <li>
-                            <input type="radio" id="s-option" name="selector" value="2">
-                            <label for="s-option" class="element-animation">comment //</label>
-                            <div class="check"><div class="inside"></div></div>
-                          </li>
-                          
-                          <li>
-                            <input type="radio" id="t-option" name="selector" value="3">
-                            <label for="t-option" class="element-animation">comment [ ]</label>
-                            <div class="check"><div class="inside"></div></div>
-                          </li>
+                        	<c:forEach var="answer" items="${question.answers}">
+	                          
+	                          <li>
+	                            <input type="radio" id="f-option" name="question_${question.id}" value="${answer.id}">
+	                            <label for="f-option" class="element-animation">${answer.content}</label>
+	                            <div class="check"></div>
+	                          </li>
+	                          
+                         	</c:forEach>
                         </ul>
                     </div>
               	

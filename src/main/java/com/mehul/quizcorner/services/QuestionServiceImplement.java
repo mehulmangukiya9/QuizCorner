@@ -16,7 +16,7 @@ public class QuestionServiceImplement implements QuestionService
 	private QuestionRepository qrepo;
 	
 	@Override
-	public Iterable<Question> findAll() {
+	public Iterable<Question> findAllQuestions() {
 		return qrepo.findAll();
 	}
 

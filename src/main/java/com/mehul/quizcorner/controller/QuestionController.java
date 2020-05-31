@@ -18,7 +18,8 @@ public class QuestionController
 	@RequestMapping(method = RequestMethod.GET)
 	public String quiz(ModelMap model)
 	{
-		model.put("questions", qservice.findAll());
+		model.put("questions", qservice.findAllQuestions());
+		//model.put("answers", qservice.findAllAnswers());
 		return "quiz.jsp";
 	}
 }
