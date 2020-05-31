@@ -85,28 +85,35 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary"></h6>
+              <h6 class="m-0 font-weight-bold text-primary">
+			  <button class="btn btn-primary btn-user btn-block" onclick="showQuiz()" > Click</button>
+			  </h6>
             </div>
             <div class="card-body">
               
 			  
 			  
 			  
-			  
+			  <!--1. Give quizbody name 
+				  2. set in the button property onclick="showQuiz()
+				  3. Create a JS function-
+				  4. Declare it outside, above LoaderScript-->
+				  
 			  <!--QUIZ BODY STARTS HERE-->
-			  <div class="container">
+			  <div id="quizbody" class="container">
         <div class="row"><br><br>
             <div class="col-sm-8 col-sm-offset-2">
                 <div class="loader">
 
                     <div id="quiz">
                   
-                        <div class="question"> <!--h3 mb-0 text-gray-800-->
+                        <div class="question"> 
                             <h3><span class="label label-warning" id="qid">1</span>
                             <span id="question"> How can you add a single line comment in a JavaScript?</span>
                             </h3>
                         </div>
                         <ul>
+						<!--<h3 h3 mb-0 text-gray-800 class="question" ><span id="question"> How can you add a single line comment in a JavaScript?</span></h3>-->
                           <li>
                             <input type="radio" id="f-option" name="selector" value="1">
                             <label for="f-option" class="element-animation">/*-- comment --*/</label>
@@ -124,14 +131,20 @@
                             <label for="t-option" class="element-animation">comment [ ]</label>
                             <div class="check"><div class="inside"></div></div>
                           </li>
+						  
                         </ul>
-                    </div>
+						
+                    </div>				
+					
                 </div>
+					
                 <div class="text-muted">
                     <span id="answer"></span>
                 </div>
                 
             </div>
+			
+			
         </div>
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
