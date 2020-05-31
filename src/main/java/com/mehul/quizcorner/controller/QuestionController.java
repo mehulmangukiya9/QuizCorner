@@ -19,6 +19,6 @@ public class QuestionController
 	public String quiz(ModelMap model)
 	{
 		model.put("questions", qservice.findAll());
-		return "quiz14.jsp";
+		return "quiz.jsp";
 	}
 }
