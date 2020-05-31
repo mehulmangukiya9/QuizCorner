@@ -161,7 +161,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h2 class="h3 mb-0 text-gray-800">Welcome ${user.name}</h2>
-            <a href="#" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm"><i class="far fa-play-circle  text-white-50"></i> Start Quiz</a>
+            <a href="/question" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm"><i class="far fa-play-circle  text-white-50"></i> Start Quiz</a>
           </div>
 
 
