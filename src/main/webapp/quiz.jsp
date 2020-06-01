@@ -102,42 +102,52 @@
             <div class="card-body">
               
 			  
-			  <!--QUIZ BODY STARTS HERE-->
-			  <div class="container">
+			 	  <!--QUIZ BODY STARTS HERE-->
+	<div id="quizbody" class="container">
         <div class="row"><br><br>
-        <c:forEach var="question" items="${questions}">
             <div class="col-sm-8 col-sm-offset-2">
                 <div class="loader">
-                
+
                     <div id="quiz">
-                 
-                        <ul>
-                        	<h3 class="question">
-                            	<span id="question"> ${question.content}</span>
+                  
+                        <div class="question"> 
+                            <h3><span class="label label-warning" id="qid">1</span>
+                            <span id="question"> How can you add a single line comment in a JavaScript?</span>
                             </h3>
-                        	<c:forEach var="answer" items="${question.answers}">
-	                          
-	                          <li>
-	                            <input type="radio" id="f-option" name="question_${question.id}" value="${answer.id}">
-	                            <label for="f-option" class="element-animation">${answer.content}</label>
-	                            <div class="check"></div>
-	                          </li>
-	                          
-                         	</c:forEach>
+                        </div>
+                        <ul>
+						<!--<h3 h3 mb-0 text-gray-800 class="question" ><span id="question"> How can you add a single line comment in a JavaScript?</span></h3>-->
+                          <li>
+                            <input type="radio" id="f-option" name="selector" value="1">
+                            <label for="f-option" class="element-animation">/*-- comment --*/</label>
+                            <div class="check"></div>
+                          </li>
+                          
+                          <li>
+                            <input type="radio" id="s-option" name="selector" value="2">
+                            <label for="s-option" class="element-animation">comment //</label>
+                            <div class="check"><div class="inside"></div></div>
+                          </li>
+                          
+                          <li>
+                            <input type="radio" id="t-option" name="selector" value="3">
+                            <label for="t-option" class="element-animation">comment [ ]</label>
+                            <div class="check"><div class="inside"></div></div>
+                          </li>
+						  
                         </ul>
-                    </div>
-              	
+						
+                    </div>				
+					
                 </div>
+					
                 <div class="text-muted">
                     <span id="answer"></span>
                 </div>
+                
             </div>
-            
-            <div class="col-sm-8 col-sm-offset-2">
-			  <p> <hr class="sidebar-divider my-0"> </p>
-			</div>
-       	
-       	</c:forEach>
+			
+			
         </div>
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
@@ -158,14 +168,7 @@
             </div>
         </div> 
     </div>
-<!--QUIZ BODY ENDS HERE-->
-			  
-			  
-			  
-			  
-			  
-			  
-			  
+<!--QUIZ BODY ENDS HERE--> 
 			  
             </div>
           </div>

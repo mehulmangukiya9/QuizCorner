@@ -60,7 +60,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="student_dashboard.jsp">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -69,7 +69,7 @@
       <hr class="sidebar-divider">
 	  
 	  <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="#">
           <i class="fas fa-poll"></i>
           <span>Past Results</span></a>
       </li>
@@ -164,69 +164,6 @@
             <a href="/question" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm"><i class="far fa-play-circle  text-white-50"></i> Start Quiz</a>
           </div>
 
-
-
-<div class="container">
-        <div class="row"><br><br>
-            <div class="col-sm-8 col-sm-offset-2">
-                <div class="loader">
-
-                    <div id="quiz">
-                  
-                        <div class="question"> <!--h3 mb-0 text-gray-800-->
-                            <h3><span class="label label-warning" id="qid">1</span>
-                            <span id="question"> How can you add a single line comment in a JavaScript?</span>
-                            </h3>
-                        </div>
-                        <ul>
-                          <li>
-                            <input type="radio" id="f-option" name="selector" value="1">
-                            <label for="f-option" class="element-animation">/*-- comment --*/</label>
-                            <div class="check"></div>
-                          </li>
-                          
-                          <li>
-                            <input type="radio" id="s-option" name="selector" value="2">
-                            <label for="s-option" class="element-animation">comment //</label>
-                            <div class="check"><div class="inside"></div></div>
-                          </li>
-                          
-                          <li>
-                            <input type="radio" id="t-option" name="selector" value="3">
-                            <label for="t-option" class="element-animation">comment [ ]</label>
-                            <div class="check"><div class="inside"></div></div>
-                          </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="text-muted">
-                    <span id="answer"></span>
-                </div>
-                
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <div id="result-of-question" class="pulse animated" style="display: none;">
-                    <span id="totalCorrect" class="pull-right"></span>
-                    <table class="table table-hover table-responsive" >
-                        <thead>
-                            <tr>
-                                <th>Question No.</th>
-                                <th>Our answer</th>
-                                <th>Your answer</th>
-                                <th>Result</th>
-                            </tr>
-                        </thead>
-                        <tbody id="quizResult"></tbody>
-                    </table>
-                </div>
-            </div>
-        </div> 
-    </div>
-
-
-		  
 <!--
           <Content Row>
           <div class="row">
@@ -280,10 +217,10 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
+            <span aria-hidden="true">X</span>
           </button>
         </div>
-        <div class="modal-body">Mehul, you can execute your logout code here</div>
+        <div class="modal-body">${user.name}, You sure want to leave?</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <a class="btn btn-primary" href="logout">Logout</a>
@@ -299,7 +236,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Mehul, Please Put Link to Profile Page Here And Let me know. I will delete this section after it.... </h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
+            <span aria-hidden="true"></span>
           </button>
         </div>
         <div class="modal-body">Yes, I know you can also delete this section, but to show some entry in Github, let me do it :) </div>
