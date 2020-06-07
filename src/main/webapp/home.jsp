@@ -14,10 +14,15 @@
 
 <% 
 	response.setHeader("cache-Control","no-cache,no-store,must-revalidate");
-%>
 
+	
+%>
+<br>
+<br>
 <div class="container">
-  <h2>Student login form</h2>
+  <h2 align="center">Student login form</h2>
+  <br>
+  <h6 style="color: #FF0000" align="center">${message}</h6>
   <form action="/login">
     <div class="form-group">
       <label for="username">Username:</label>

@@ -38,6 +38,7 @@ public class UserController
 		}
 		else
 		{
+			model.addAttribute("message", "Enter correct credentials");
 			return "home.jsp";
 		}
 	}

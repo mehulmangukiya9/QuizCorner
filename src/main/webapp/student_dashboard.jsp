@@ -291,7 +291,7 @@
 	
 	        <div class="md-form">
 	          <i class="fas fa-pencil prefix grey-text"></i>
-	          <textarea type="text" id="form8" class="md-textarea form-control" rows="3" name="address"></textarea>
+	          <textarea type="text" id="form8" class="md-textarea form-control" rows="3" name="address" required="required"></textarea>
 	          <label data-error="wrong" data-success="right" for="form8">Address</label>
 	        </div>
 	
